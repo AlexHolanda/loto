@@ -56,7 +56,7 @@ a{
 }
 
 .container .column {
-    width: 850px;
+    width: 750px;
     height: 720px;
     background-color: #FFF;    
     border-radius: 10px;
@@ -67,6 +67,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 550px;
 }
 
 #playLoto{
@@ -78,7 +79,7 @@ a{
 }
 
 #playRes{
-    width: 65%;
+    width: 430px;
 }
 
 #headspan{
