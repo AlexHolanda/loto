@@ -48,7 +48,7 @@ a{
 }
 
 .container{
-    display: flex;
+    display: block;
     gap: 30px;
     justify-content: center;
     align-items: center;
