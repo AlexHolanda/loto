@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Lotofácil</title>
+    <link rel="stylesheet" href="lotofacil.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,300&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="box-1">
+                <div id="menu">
+                    <ul>
+                        <li>
+                            <a href="http://127.0.0.1:5500/index.html"><span class="bx bxs-home"></span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/imc/imc.html"><span class="bx bxs-calculator"></span>
+                                <span>Cálculo IMC</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/jogodavelha/jogodavela.html"><span
+                                    class="bx bxs-dice-1"></span>
+                                <span>Jogo da Velha</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/combustivel/index.html"><span class="bx bxs-hot"></span>
+                                <span>Combustível</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/geranumeros/lotofacil.html"><span
+                                    class="bx bxs-dice-1"></span>
+                                <span>Lotofácil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/geranumeros/megasena.html"><span
+                                    class="bx bxs-dice-1"></span>
+                                <span>Mega Sena</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/geranumeros/bicho.html"><span
+                                    class="bx bxs-dice-1"></span>
+                                <span>Jogo do Bicho</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/geranumeros/diadesorte.html"><span
+                                    class="bx bxs-dice-1"></span>
+                                <span>Dia de Sorte</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column" id="playLoto">
+                <div class="body">
+                    <div id="fundo">
+                        <img src="https://logodownload.org/wp-content/uploads/2018/10/lotofacil-logo-1.png"
+                            alt="Lotofacil" id="logolotofacil">
+                        <div id="divNumeros">
+                            <section>
+                                <span id="um" class="numeros">1</span>
+                                <span id="dois" class="numeros">2</span>
+                                <span id="tres" class="numeros">3</span>
+                                <span id="quatro" class="numeros">4</span>
+                                <span id="cinco" class="numeros">5</span>
+                                <br></br>
+                                <span id="seis" class="numeros">6</span>
+                                <span id="sete" class="numeros">7</span>
+                                <span id="oito" class="numeros">8</span>
+                                <span id="nove" class="numeros">9</span>
+                                <span id="dez" class="numeros">10</span>
+                                <br></br>
+                                <span id="onze" class="numeros">11</span>
+                                <span id="doze" class="numeros">12</span>
+                                <span id="treze" class="numeros">13</span>
+                                <span id="quatorze" class="numeros">14</span>
+                                <span id="quinze" class="numeros">15</span>
+                                <br></br>
+                                <span id="dezeseis" class="numeros">16</span>
+                                <span id="dezesete" class="numeros">17</span>
+                                <span id="dezoito" class="numeros">18</span>
+                                <span id="dezenove" class="numeros">19</span>
+                                <span id="vinte" class="numeros">20</span>
+                                <br></br>
+                                <span id="vinteeum" class="numeros">21</span>
+                                <span id="vinteedois" class="numeros">22</span>
+                                <span id="vinteetres" class="numeros">23</span>
+                                <span id="vinteequatro" class="numeros">24</span>
+                                <span id="vinteecinco" class="numeros">25</span>
+                                <br></br>
+                                <div id="btgerar" style="align-items: center;">
+                                    <button id="btGerarNumeros" onclick="gerar()">Gerar</button>
+                                    <button id="btLimparNumeros" onclick="limparNumeros()">Limpar</button>
+                                </div>
+                                <br>
+                                <h3 id="hFixo">
+                                    <br>
+                                    <label id="lbFixos">Números Fixos: </label>
+                                    <input type="text" id="numero1">
+                                    <input type="text" id="numero2">
+                                    <input type="text" id="numero3">
+                                    <input type="text" id="numero4">
+                                    <input type="text" id="numero5">
+                                </h3>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column" id="playRes">
+                <div id="headRes">
+                    <span id="headspan">Os números gerados são:</span>
+                    <h3>
+                        <hr>
+                        <label id="resposta"></label><br>
+                    </h3>
+                    <div id="resParImpar"><br>
+                        <label>Números Pares:</label>
+                        <label id="resPar"></label>
+                        <br>
+                        <label>Números Ímpares:</label>
+                        <label id="resImpar"></label><br>
+                        <hr>
+                        <br>
+                        <label>Números Fixos:</label><br>
+                        <label id="resFixos"></label><br>
+                        <hr>
+                    </div><br>
+                    <div id="Lista">
+                        <label>Lista dos 8 Jogos:</label><br>
+                        <div class="lista">
+                            <label id="nlista1"></label><br>
+                        </div>
+                        <div class="lista">
+                            <label id="nlista2"></label><br>
+                        </div>
+                        <div class="lista">
+                            <label id="nlista3"></label><br>
+                        </div>
+                        <div class="lista">
+                            <label id="nlista4"></label><br>
+                        </div>
+                        <div class="lista">
+                            <label id="nlista5"></label><br>
+                        </div>
+                        <div class="lista">
+                            <label id="nlista6"></label><br>
+                        </div>
+                        <div class="lista">
+                            <label id="nlista7"></label><br>
+                        </div>
+                        <div class="lista">
+                            <label id="nlista8"></label><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="./lotofacil.js"></script>
+    <script>
+        function abrirMenu() {
+            document.getElementById('menu').style.width = '250px'
+        }
+        function fecharMenu() {
+            document.getElementById('menu').style.width = '0px'
+        }
+    </script>
+</body>
+
+</html>
